@@ -3,7 +3,14 @@
 import { PortfolioCategory } from "@/types/portfolio";
 
 type Category = "All" | PortfolioCategory;
-const categories: Category[] = ["All", "Executive VA", "Admin & Operations", "Creative & Social"];
+
+const categories: Category[] = [
+  "All",
+  "Calendar Management",
+  "Inbox Management",
+  "Travel Management",
+  "Expense Report"
+];
 
 export function FilterBar({ active, onChange }: { active: Category; onChange: (c: Category) => void }) {
   return (

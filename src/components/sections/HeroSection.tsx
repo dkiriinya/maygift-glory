@@ -53,7 +53,7 @@ export function HeroSection() {
           <div className="absolute inset-[18px_-18px_-18px_18px] bg-rose opacity-60 z-0" />
           <div className="relative z-10 w-full h-full bg-card-bg overflow-hidden">
             <Image
-              src="/images/maygift-headshot.png"
+              src="https://res.cloudinary.com/dm8lfxxwl/image/upload/v1779307936/maygift-glory/WhatsApp_Image_2026-05-20_at_22.58.25_fg3gyh.jpg"
               alt="Maygift Glory, Executive Virtual Assistant"
               fill
               priority

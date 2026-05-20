@@ -2,7 +2,11 @@
 
 export type MediaType = "image" | "video";
 
-export type PortfolioCategory = "Executive VA" | "Admin & Operations" | "Creative & Social";
+export type PortfolioCategory =
+  | "Calendar Management"
+  | "Inbox Management"
+  | "Travel Management"
+  | "Expense Report";
 
 export type PortfolioItem = {
   id: string; // Cloudinary public_id

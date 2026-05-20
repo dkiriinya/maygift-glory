@@ -44,7 +44,7 @@ export function ServicesSection() {
       id="services"
       className="px-[6vw] bg-bg flex-col justify-center items-start gap-[3.5rem] min-h-screen flex"
     >
-      <div className="w-full flex justify-between items-end max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-4 reveal">
+      <div className="w-full flex justify-between items-end max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-4">
         <RevealWrapper>
           <div>
             <Label>What I Do</Label>

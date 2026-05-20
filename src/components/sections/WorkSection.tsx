@@ -23,8 +23,7 @@ export function WorkSection() {
     [activeFilter]
   );
 
-  const featured = filtered.find((i) => i.featured) ?? filtered[0];
-  const rest = filtered.filter((i) => i.id !== featured?.id);
+
 
   return (
     <section id="work" className="min-h-screen bg-card-bg flex flex-col justify-center px-[6vw] py-16 gap-10">
@@ -54,25 +53,23 @@ export function WorkSection() {
 
       {/* Grid */}
       <div className="work-grid w-full">
-        {featured && (
-          <WorkCard
-            item={featured}
-            className="work-grid__item--feature min-h-[320px]"
-            onClick={setLightboxItem}
-          />
-        )}
-        {rest.slice(0, 3).map((item, i) => (
-          <WorkCard
-            key={item.id}
-            item={item}
-            className="min-h-[180px]"
-            onClick={setLightboxItem}
-            style={{ transitionDelay: `${(i + 1) * 60}ms` }}
-          />
-        ))}
-        {rest.slice(3, 4).map((item) => (
-          <WorkCard key={item.id} item={item} className="work-grid__item--strip" onClick={setLightboxItem} />
-        ))}
+        {filtered.map((item, idx) => {
+          let className = "min-h-[180px]";
+          if (item.featured) {
+            className = "work-grid__item--feature min-h-[320px]";
+          } else if (idx > 0 && idx % 4 === 0) {
+            className = "work-grid__item--strip min-h-[200px]";
+          }
+          return (
+            <WorkCard
+              key={item.id}
+              item={item}
+              className={className}
+              onClick={setLightboxItem}
+              style={{ transitionDelay: `${(idx + 1) * 60}ms` }}
+            />
+          );
+        })}
       </div>
 
       {/* Lightbox */}
