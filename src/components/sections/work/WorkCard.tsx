@@ -30,19 +30,21 @@ export function WorkCard({ item, className = "", onClick, style }: Props) {
 
   return (
     <div
-      className={`relative overflow-hidden cursor-pointer group bg-card-bg ${className}`}
+      className={`relative overflow-hidden cursor-pointer group rounded-lg bg-bg/10 w-full transition-all duration-300 hover:shadow-lg ${className}`}
       onClick={() => onClick(item)}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      style={style}
+      style={{
+        ...style,
+        aspectRatio: item.aspectRatio || "16/9",
+      }}
     >
-      {/* Media */}
       {item.type === "image" ? (
         <Image
           src={getImageUrl(item.cloudinaryId, 800, 600)}
           alt={item.title}
           fill
-          className="object-cover transition-transform duration-700 ease-spring group-hover:scale-[1.03]"
+          className="object-cover transition-transform duration-700 ease-spring group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
       ) : (
@@ -51,7 +53,7 @@ export function WorkCard({ item, className = "", onClick, style }: Props) {
             src={getVideoPosterUrl(item.cloudinaryId, 800, 600)}
             alt={item.title}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-700 ease-spring group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
           <video
@@ -65,33 +67,26 @@ export function WorkCard({ item, className = "", onClick, style }: Props) {
         </>
       )}
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-text/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-      {/* Category tag */}
-      <span className="absolute top-3 left-3 z-10 bg-accent text-white text-[0.65rem] font-semibold tracking-widest uppercase px-2.5 py-1">
-        {item.category}
-      </span>
-
-      {/* Video duration badge */}
-      {item.type === "video" && item.duration && (
-        <span className="absolute top-3 right-3 z-10 bg-text/70 text-white text-[0.65rem] font-medium px-2 py-1 flex items-center gap-1">
-          <PlayIcon size={10} /> {item.duration}
-        </span>
-      )}
-
-      {/* Play button — video only */}
+      {/* Play icon badge for video */}
       {item.type === "video" && (
-        <div className="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="w-14 h-14 rounded-full border border-white/50 bg-white/15 flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
-            <PlayIcon size={20} className="text-white ml-0.5" />
-          </div>
+        <div className="absolute bottom-3 right-3 z-10 w-8 h-8 rounded-full border border-white/20 bg-black/40 backdrop-blur-sm flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-accent group-hover:border-accent">
+          <PlayIcon size={12} className="text-white ml-0.5" />
         </div>
       )}
 
-      {/* Title — slides up on hover */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 ease-spring">
-        <p className="font-serif font-bold text-white text-sm leading-snug">{item.title}</p>
+      {/* Gradient hover caption overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+        <span className="text-[0.6rem] font-semibold tracking-widest uppercase text-accent mb-1">
+          {item.category}
+        </span>
+        <h4 className="font-serif font-bold text-white text-xs leading-snug">
+          {item.title}
+        </h4>
+        {item.type === "video" && item.duration && (
+          <span className="text-[0.55rem] text-white/60 mt-1 flex items-center gap-1">
+            <PlayIcon size={8} /> Video • {item.duration}
+          </span>
+        )}
       </div>
     </div>
   );

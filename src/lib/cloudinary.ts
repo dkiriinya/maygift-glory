@@ -24,7 +24,7 @@ export function getVideoPosterUrl(publicId: string, width: number, height: numbe
     .video(publicId)
     .resize(fill().width(width).height(height))
     .delivery(quality("auto"))
-    .delivery(format(auto()))
+    .delivery(format("jpg"))
     .toURL();
 }
 

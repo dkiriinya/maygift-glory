@@ -73,6 +73,7 @@ export function WorkLightbox({ item, items, onClose, onNavigate }: Props) {
               src={getVideoUrl(item.cloudinaryId)}
               controls
               autoPlay
+              muted
               className="w-full max-h-[65vh] object-contain rounded bg-black"
             />
           )}

@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable} h-full antialiased`}>
+    <html lang="en" className={`${playfair.variable} ${dmSans.variable} h-full antialiased scroll-smooth`}>
       <body className="min-h-full font-sans bg-bg text-text selection:bg-rose selection:text-white">
         {children}
       </body>

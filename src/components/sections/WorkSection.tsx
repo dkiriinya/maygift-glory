@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { Label } from "@/components/ui/Label";
 import { RevealWrapper } from "@/components/ui/RevealWrapper";
 import { FilterBar } from "./work/FilterBar";
@@ -22,6 +24,24 @@ export function WorkSection() {
         : portfolioItems.filter((i) => i.category === activeFilter),
     [activeFilter]
   );
+
+  useGSAP(() => {
+    if (filtered.length > 0) {
+      gsap.fromTo(
+        ".work-grid-item",
+        { opacity: 0, scale: 0.95, y: 15 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.45,
+          ease: "power2.out",
+          stagger: 0.03,
+          overwrite: "auto",
+        }
+      );
+    }
+  }, [filtered]);
 
 
 
@@ -53,23 +73,14 @@ export function WorkSection() {
 
       {/* Grid */}
       <div className="work-grid w-full">
-        {filtered.map((item, idx) => {
-          let className = "min-h-[180px]";
-          if (item.featured) {
-            className = "work-grid__item--feature min-h-[320px]";
-          } else if (idx > 0 && idx % 4 === 0) {
-            className = "work-grid__item--strip min-h-[200px]";
-          }
-          return (
-            <WorkCard
-              key={item.id}
-              item={item}
-              className={className}
-              onClick={setLightboxItem}
-              style={{ transitionDelay: `${(idx + 1) * 60}ms` }}
-            />
-          );
-        })}
+        {filtered.map((item, idx) => (
+          <WorkCard
+            key={item.id}
+            item={item}
+            className="work-grid-item"
+            onClick={setLightboxItem}
+          />
+        ))}
       </div>
 
       {/* Lightbox */}

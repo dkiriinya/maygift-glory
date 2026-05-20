@@ -65,30 +65,34 @@ body::after {
 
 /* Work Grid Styles */
 .work-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  gap: 1rem;
+  column-count: 3;
+  column-gap: 1.5rem;
 }
 
-.work-grid__item--feature {
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
-}
-
-.work-grid__item--strip {
-  grid-column: 1 / -1;
-  height: 200px;
+.work-grid-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  display: block;
 }
 
 @media (max-width: 1023px) {
-  .work-grid { grid-template-columns: 1fr 1fr; }
-  .work-grid__item--feature { grid-column: 1 / -1; grid-row: auto; }
+  .work-grid {
+    column-count: 2;
+    column-gap: 1.25rem;
+  }
+  .work-grid-item {
+    margin-bottom: 1.25rem;
+  }
 }
 
 @media (max-width: 767px) {
-  .work-grid { grid-template-columns: 1fr; }
-  .work-grid__item--strip { height: auto; }
+  .work-grid {
+    column-count: 1;
+    column-gap: 0;
+  }
+  .work-grid-item {
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 900px) {

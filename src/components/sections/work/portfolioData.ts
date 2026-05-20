@@ -18,7 +18,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Calendar Setup (Before)",
     description: "Initial cluttered calendar view before restructuring and prioritizing events.",
     cloudinaryId: "maygift-glory/Calendar Management/before_calendar_management",
-    aspectRatio: "16/9",
+    aspectRatio: "1/1",
   },
   {
     id: "item-03",
@@ -37,7 +37,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Prior Restructuring Audit",
     description: "Detailed run-through of schedule overlaps, double-bookings, and priority issues before cleaning.",
     cloudinaryId: "maygift-glory/Calendar Management/Before Calendar Management",
-    aspectRatio: "16/9",
+    aspectRatio: "4/3",
     duration: "0:10",
   },
   {
@@ -57,7 +57,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Travel Coordination & Logistics Briefing",
     description: "Detailed walkthrough of building structured multi-city flight, lodging, transit, and agenda itineraries.",
     cloudinaryId: "maygift-glory/Travel Management/Travel_Management_and_coordination_hforsb",
-    aspectRatio: "16/9",
+    aspectRatio: "4/3",
     duration: "0:54",
   },
   {
@@ -67,7 +67,7 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Expense Auditing & Receipts Logging",
     description: "Demonstrating automated transaction sorting, invoice matching, and generating monthly summaries for review.",
     cloudinaryId: "maygift-glory/Expense Report/expense_report_s5blkm",
-    aspectRatio: "16/9",
+    aspectRatio: "1/1",
     duration: "0:35",
   },
   {
@@ -77,6 +77,6 @@ export const portfolioItems: PortfolioItem[] = [
     title: "Secondary Color-Coding Setup",
     description: "Detailed categorization scheme showing focus periods, executive lunches, and board prep hours.",
     cloudinaryId: "maygift-glory/Calendar Management/after_calendar_management_2",
-    aspectRatio: "16/9",
+    aspectRatio: "4/3",
   },
 ];
