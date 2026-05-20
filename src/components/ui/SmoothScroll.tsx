@@ -9,6 +9,11 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
+    // Only initialize smooth scroll on larger displays (>= 1024px)
+    if (window.innerWidth < 1024) {
+      return;
+    }
+
     // Initialize Lenis on the window/viewport
     const lenis = new Lenis({
       duration: 1.2,

@@ -16,7 +16,7 @@ export function ContactSection() {
           </RevealWrapper>
           <RevealWrapper delay={100}>
             <h2 className="font-serif text-[clamp(2rem,3.5vw,3.6rem)] font-bold text-bg leading-[1.1] tracking-[-0.02em] mb-8">
-              Let&apos;s build something <em className="italic text-rose not-italic">seamless</em>{" "}
+              Let&apos;s build something <em className="text-rose">seamless</em>{" "}
               together.
             </h2>
           </RevealWrapper>

@@ -16,7 +16,7 @@ export function HeroSection() {
         <RevealWrapper delay={100}>
           <h1 className="font-serif text-[clamp(2.6rem,5vw,5rem)] font-black leading-[1.05] text-text tracking-[-0.02em] mb-8">
             I run the backend of leaders who don&apos;t have time to{" "}
-            <em className="italic text-accent not-italic">run it themselves.</em>
+            <em className="text-accent">run it themselves.</em>
           </h1>
         </RevealWrapper>
         <RevealWrapper delay={200}>

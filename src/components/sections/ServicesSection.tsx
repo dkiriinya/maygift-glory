@@ -51,7 +51,7 @@ export function ServicesSection() {
             <h2 className="font-serif text-[clamp(2rem,3.5vw,3.6rem)] font-bold text-text leading-[1.1] tracking-[-0.02em] max-w-[460px]">
               Core services &
               <br />
-              <em className="italic text-accent not-italic">niches.</em>
+              <em className="text-accent">niches.</em>
             </h2>
           </div>
         </RevealWrapper>
