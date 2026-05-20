@@ -1,0 +1,61 @@
+import { PortfolioItem } from "@/types/portfolio";
+
+export const portfolioItems: PortfolioItem[] = [
+  {
+    id: "item-01",
+    type: "image",
+    category: "Executive VA",
+    title: "Multi-timezone Calendar Setup",
+    description: "Google Calendar structured across 3 timezones for a US/UK/AU executive team.",
+    cloudinaryId: "portfolio/calendar-setup", // ← swap in real ID
+    aspectRatio: "16/9",
+    featured: true,
+  },
+  {
+    id: "item-02",
+    type: "video",
+    category: "Admin & Operations",
+    title: "Inbox Zero Workflow",
+    description: "Screen recording demonstrating a full inbox triage and label system in Gmail.",
+    cloudinaryId: "portfolio/inbox-workflow",
+    aspectRatio: "16/9",
+    duration: "1:12",
+  },
+  {
+    id: "item-03",
+    type: "image",
+    category: "Creative & Social",
+    title: "Instagram Content Batch",
+    description: "Canva-designed carousel set for a B2B brand's monthly content plan.",
+    cloudinaryId: "portfolio/social-batch",
+    aspectRatio: "1/1",
+  },
+  {
+    id: "item-04",
+    type: "video",
+    category: "Admin & Operations",
+    title: "ClickUp Workspace Setup",
+    description: "Walkthrough of a full project management workspace built from scratch.",
+    cloudinaryId: "portfolio/clickup-setup",
+    aspectRatio: "16/9",
+    duration: "2:04",
+  },
+  {
+    id: "item-05",
+    type: "image",
+    category: "Executive VA",
+    title: "Travel Itinerary Doc",
+    description: "Structured travel brief with flights, hotels, and local logistics.",
+    cloudinaryId: "portfolio/travel-brief",
+    aspectRatio: "4/3",
+  },
+  {
+    id: "item-06",
+    type: "image",
+    category: "Creative & Social",
+    title: "Brand Positioning Deck",
+    description: "Slide deck supporting a client rebrand across LinkedIn and Instagram.",
+    cloudinaryId: "portfolio/brand-deck",
+    aspectRatio: "16/9",
+  },
+];
