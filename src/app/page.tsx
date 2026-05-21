@@ -19,7 +19,7 @@ export default function Home() {
           {/* Mobile Sticky Background (visible only on screens <= 900px) */}
           <div className="sticky top-0 left-0 w-full h-screen z-0 min-[901px]:hidden pointer-events-none overflow-hidden bg-[#261A1A]">
             <Image
-              src="https://res.cloudinary.com/dm8lfxxwl/image/upload/v1779307936/maygift-glory/WhatsApp_Image_2026-05-20_at_22.58.25_fg3gyh.jpg"
+              src="https://res.cloudinary.com/dm8lfxxwl/image/upload/v1779347697/maygift-glory/hero-image_wvbqoz.jpg"
               alt="Maygift Glory, Executive Virtual Assistant"
               fill
               priority
