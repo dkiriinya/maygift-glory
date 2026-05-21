@@ -7,20 +7,21 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="px-[6vw] gap-[4vw] justify-between items-center bg-bg min-h-screen flex relative overflow-hidden"
+      className="px-[6vw] gap-[4vw] justify-between items-center bg-bg min-h-screen flex relative overflow-hidden max-[900px]:bg-transparent max-[900px]:items-end max-[900px]:pt-24 max-[900px]:pb-12"
     >
-      <div className="max-w-[620px] flex-1">
+
+      <div className="max-w-[620px] flex-1 relative z-10">
         <RevealWrapper>
           <Label>Virtual & Executive Assistant</Label>
         </RevealWrapper>
         <RevealWrapper delay={100}>
-          <h1 className="font-serif text-[clamp(2.6rem,5vw,5rem)] font-black leading-[1.05] text-text tracking-[-0.02em] mb-8">
+          <h1 className="font-serif text-[clamp(2.6rem,5vw,5rem)] font-black leading-[1.05] text-text tracking-[-0.02em] mb-8 max-[900px]:text-white">
             I run the backend of leaders who don&apos;t have time to{" "}
-            <em className="text-accent">run it themselves.</em>
+            <em className="text-accent max-[900px]:text-rose">run it themselves.</em>
           </h1>
         </RevealWrapper>
         <RevealWrapper delay={200}>
-          <p className="font-sans text-[1.05rem] font-light leading-[1.7] text-text opacity-75 max-w-[440px] mb-12">
+          <p className="font-sans text-[1.05rem] font-light leading-[1.7] text-text opacity-75 max-w-[440px] mb-12 max-[900px]:text-white/80">
             Ensuring a seamless flow of operations so you can reclaim 10+ hours every single week.
           </p>
         </RevealWrapper>
@@ -41,7 +42,11 @@ export function HeroSection() {
               </svg>
               Book a Discovery Call
             </Button>
-            <Button href="#about" variant="outline">
+            <Button
+              href="#about"
+              variant="outline"
+              className="max-[900px]:text-white max-[900px]:border-white/50 max-[900px]:hover:bg-white max-[900px]:hover:text-[#261A1A]"
+            >
               Meet Maygift
             </Button>
           </div>

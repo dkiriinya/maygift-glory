@@ -6,7 +6,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="px-[6vw] bg-text flex-col justify-center items-start gap-0 min-h-screen py-24 flex"
+      className="px-[6vw] bg-text flex-col justify-center items-start gap-0 min-h-screen py-24 flex max-[900px]:bg-transparent"
     >
       <div className="grid grid-cols-[1.1fr_1fr] max-[1024px]:grid-cols-1 gap-[6vw] w-full items-start">
         <div>

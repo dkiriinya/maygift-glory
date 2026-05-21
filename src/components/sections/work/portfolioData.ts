@@ -79,4 +79,14 @@ export const portfolioItems: PortfolioItem[] = [
     cloudinaryId: "maygift-glory/Calendar Management/after_calendar_management_2",
     aspectRatio: "4/3",
   },
+  {
+    id: "item-09",
+    type: "video",
+    category: "Social Media Management",
+    title: "Social Media Campaign & Scheduling",
+    description: "Complete workflow of scheduling brand campaigns, designing post grids, and tracking engagement analytics.",
+    cloudinaryId: "maygift-glory/Social Media Management/Social_Media_Management_xmw1a0",
+    aspectRatio: "16/9",
+    duration: "0:40",
+  },
 ];

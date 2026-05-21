@@ -6,7 +6,8 @@ export type PortfolioCategory =
   | "Calendar Management"
   | "Inbox Management"
   | "Travel Management"
-  | "Expense Report";
+  | "Expense Report"
+  | "Social Media Management";
 
 export type PortfolioItem = {
   id: string; // Cloudinary public_id

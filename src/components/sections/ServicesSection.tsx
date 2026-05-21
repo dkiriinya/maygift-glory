@@ -5,36 +5,54 @@ import { RevealWrapper } from "@/components/ui/RevealWrapper";
 const services = [
   {
     num: "01",
-    title: "Executive VA",
+    title: "Legal VA",
     items: [
-      "Inbox management & correspondence",
-      "Multi-timezone calendar management",
-      "Travel management & logistics",
-      "Global scheduling coordination",
+      "Legal Document Drafting & Formatting",
+      "Case & Matter Management",
+      "Deadline & Court Date Tracking",
+      "Legal Research & Summarisation",
+      "Client Intake & Confidential Communications",
     ],
-    tools: "Google Calendar · Outlook · Calendly",
+    tools: "Clio · DocuSign · Adobe Sign · G-Suite",
   },
   {
     num: "02",
-    title: "Admin & Operations",
+    title: "Executive VA",
     items: [
-      "Project coordination",
-      "Workflow streamlining",
-      "Digital filing systems",
-      "Meeting minutes & documentation",
+      "Calendar & Schedule Management",
+      "Executive Inbox Management",
+      "Travel & Itinerary Coordination",
+      "Research & Executive Briefings",
+      "Stakeholder & Client Liaison",
+      "Meeting Coordination & Follow-Through",
     ],
-    tools: "Asana · Trello · ClickUp · Monday.com",
+    tools: "Google Calendar · Outlook · Calendly · Zoom",
   },
   {
     num: "03",
-    title: "Creative & Social Media VA",
+    title: "Administrative VA",
     items: [
-      "Brand positioning strategy",
-      "Strategic content planning",
-      "Audience engagement",
-      "Digital storytelling",
+      "Document & File Management",
+      "Data Entry & Database Management",
+      "Invoicing & Expense Tracking",
+      "Process Documentation & SOPs",
+      "Vendor & Procurement Support",
+      "Customer Support & Communications",
     ],
-    tools: "Canva · Slack · Zoom · Google Meet",
+    tools: "Asana · Trello · ClickUp · Notion · G-Suite",
+  },
+  {
+    num: "04",
+    title: "SMM VA",
+    items: [
+      "Content Creation",
+      "Content Calendar Planning & Scheduling",
+      "Graphic Design for Social Media",
+      "Community Management & Engagement",
+      "Analytics & Performance Reporting",
+      "Hashtag Research & SEO Optimisation",
+    ],
+    tools: "Canva · Meta Business Suite · CapCut · Later",
   },
 ];
 
@@ -42,7 +60,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="px-[6vw] bg-bg flex-col justify-center items-start gap-[3.5rem] min-h-screen flex"
+      className="px-[6vw] bg-bg flex-col justify-center items-start gap-[3.5rem] min-h-screen flex max-[900px]:pt-24 max-[900px]:pb-16"
     >
       <div className="w-full flex justify-between items-end max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-4">
         <RevealWrapper>
@@ -62,7 +80,7 @@ export function ServicesSection() {
         </RevealWrapper>
       </div>
 
-      <div className="grid grid-cols-3 max-[900px]:grid-cols-1 gap-6 w-full">
+      <div className="grid grid-cols-4 max-[1200px]:grid-cols-2 max-[900px]:grid-cols-1 gap-6 w-full">
         {services.map((svc, idx) => (
           <RevealWrapper key={svc.num} delay={(idx + 1) * 100}>
             <div

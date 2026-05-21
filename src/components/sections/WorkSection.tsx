@@ -25,18 +25,42 @@ export function WorkSection() {
     [activeFilter]
   );
 
+  const handleFilterChange = (newFilter: Filter) => {
+    if (newFilter === activeFilter) return;
+
+    // Smoothly fade out the grid container
+    gsap.to(".work-grid", {
+      opacity: 0,
+      y: 8,
+      duration: 0.15,
+      ease: "power2.inOut",
+      onComplete: () => {
+        setActiveFilter(newFilter);
+      },
+    });
+  };
+
   useGSAP(() => {
     if (filtered.length > 0) {
+      // Fade in the grid container
+      gsap.to(".work-grid", {
+        opacity: 1,
+        y: 0,
+        duration: 0.35,
+        ease: "power2.out",
+      });
+
+      // Stagger animate the child work items
       gsap.fromTo(
         ".work-grid-item",
-        { opacity: 0, scale: 0.95, y: 15 },
+        { opacity: 0, scale: 0.96, y: 12 },
         {
           opacity: 1,
           scale: 1,
           y: 0,
-          duration: 0.45,
+          duration: 0.4,
           ease: "power2.out",
-          stagger: 0.03,
+          stagger: 0.02,
           overwrite: "auto",
         }
       );
@@ -67,8 +91,8 @@ export function WorkSection() {
       </div>
 
       {/* Filter bar */}
-      <RevealWrapper delay={150}>
-        <FilterBar active={activeFilter} onChange={setActiveFilter} />
+      <RevealWrapper delay={150} className="relative z-40 w-full">
+        <FilterBar active={activeFilter} onChange={handleFilterChange} />
       </RevealWrapper>
 
       {/* Grid */}
