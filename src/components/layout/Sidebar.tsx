@@ -50,13 +50,16 @@ export function Sidebar() {
     setIsOpen(false);
     const target = document.getElementById(id);
     if (target) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const lenis = (window as any).lenis;
-      if (lenis) {
-        lenis.scrollTo(target);
-      } else {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
+      // Delay the scroll slightly to allow the overflow transition and closing animation to start
+      setTimeout(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const lenis = (window as any).lenis;
+        if (lenis) {
+          lenis.scrollTo(target);
+        } else {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
     }
   };
 
@@ -171,9 +174,9 @@ export function Sidebar() {
           className="absolute inset-0 bg-black/60 backdrop-blur-xs"
         />
 
-        {/* Drawer container (slides from right) */}
+        {/* Drawer container (slides from right, covers full page width) */}
         <nav
-          className={`absolute top-0 right-0 bottom-0 w-[75vw] max-w-[300px] bg-text shadow-2xl border-l border-white/5 flex flex-col justify-between p-8 pt-24 transition-transform duration-300 ease-in-out ${
+          className={`absolute top-0 right-0 bottom-0 w-full bg-text shadow-2xl flex flex-col justify-between p-8 pt-24 transition-transform duration-300 ease-in-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
           aria-label="Mobile navigation"
